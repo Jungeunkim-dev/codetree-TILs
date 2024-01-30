@@ -21,8 +21,11 @@ public class Main {
 
         for (int i=0; i < 4; i++) {
             arr.add(nums[i]);
+            
             choose(current + nums[i]);            
+            
             arr.remove(arr.size() - 1);
+            
         }
     }
 
@@ -32,7 +35,7 @@ public class Main {
 
         n = sc.nextInt();
 
-        choose(1);
+        choose(0);
         System.out.println(answer);
     }
 }
