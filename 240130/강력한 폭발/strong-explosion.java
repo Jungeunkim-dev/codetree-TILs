@@ -87,7 +87,7 @@ public class Main {
                     visited[x+1][y-1] = true;
                 }
                 if (0<= x-1 && x-1 <n && 0<= y+1 && y+1 <n) {
-                    visited[x-1][y-1] = true;
+                    visited[x-1][y+1] = true;
                 }
             }
         }
