@@ -25,11 +25,10 @@ public class Main {
             return;
         }
 
-
         for (int i=0; i < K; i++) {
 
-            if (i>=3) {
-                if (arr.get(current) == i && arr.get(current-1) == i) {
+            if (arr.size()>=2) {
+                if (arr.get(current-1) == i+1 && arr.get(current-2) == i+1) {
                     continue;
                 }
             }
