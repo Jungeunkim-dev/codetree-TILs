@@ -16,22 +16,13 @@ public class Main {
             this.start = start;
             this.end = end;
         }
-
-        public void printAll() {
-            for(int i=0; i<arr.size(); i++){
-                System.out.println(this.start+","+this.end);
-            }
-        }
     }
 
 
     public static void choose(int current) {
 
 
-        if (current == n-1){
-            System.out.println(arr.size());
-            Pair pair = new Pair(1,2);
-            pair.printAll();
+        if (current == n){
             max_count = Math.max(max_count, arr.size());
             return;
         }
@@ -74,6 +65,6 @@ public class Main {
 
         choose(0);
 
-        // System.out.println(max_count);
+        System.out.println(max_count);
     }
 }
