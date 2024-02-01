@@ -60,6 +60,11 @@ public class Main {
             nums[i] = sc.nextInt();
         }
 
+        // 말들은 1번에 놓여 있다.
+        for(int i=0; i<k; i++) {
+            loc[i] = 1;
+        }
+
         choose(0);
 
         System.out.println(max_score);
