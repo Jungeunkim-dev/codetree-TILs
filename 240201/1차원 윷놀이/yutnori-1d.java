@@ -9,12 +9,11 @@ public class Main {
     public static int[] loc;
     
     public static int max_score = 0;
-    
 
     public static void countReachedM() {
         int count = 0;
         for(int i=0; i<k; i++) {
-            if (loc[i] >= m-1){
+            if (loc[i] >= m){
                 count++;
             }
         }
@@ -26,9 +25,9 @@ public class Main {
 
     public static void choose(int current) {
 
+        countReachedM();
 
         if (current == n) {
-            countReachedM();            
             return;
         }
 
@@ -55,7 +54,7 @@ public class Main {
         k = sc.nextInt();
 
         nums = new int[n];
-        loc = new int[n];
+        loc = new int[k];
 
         for(int i = 0; i<n; i++) {
             nums[i] = sc.nextInt();
