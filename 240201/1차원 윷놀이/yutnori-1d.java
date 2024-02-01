@@ -14,7 +14,7 @@ public class Main {
     public static void countReachedM() {
         int count = 0;
         for(int i=0; i<k; i++) {
-            if (loc[i] >= m){
+            if (loc[i] >= m-1){
                 count++;
             }
         }
