@@ -10,6 +10,12 @@ public class Main {
         int n = sc.nextInt();
         int[] dp = new int[n+1];
 
+        if(n==1 || n==2) {
+            System.out.println(1);
+        } else {
+
+        
+
         dp[1] = 1;
         dp[2] = 1;
 
@@ -18,6 +24,7 @@ public class Main {
         }
 
         System.out.println(dp[n]);
+        }
 
 
     }
