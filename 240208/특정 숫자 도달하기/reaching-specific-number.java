@@ -23,6 +23,11 @@ public class Main {
         }
 
         System.out.print(sum+ " ");
-        System.out.printf("%.1f%n", (double) sum / flag);
+
+        if (flag == 9) {
+            System.out.printf("%.1f%n", (double) sum / 10);
+        } else {
+            System.out.printf("%.1f%n", (double) sum / flag);
+        }
     }
 }
