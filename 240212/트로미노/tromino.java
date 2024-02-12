@@ -29,7 +29,7 @@ public class Main {
                 int nx = cx + moves[i][j][0];
                 int ny = cy + moves[i][j][1];
 
-                if(nx<0 || nx >= n || ny <0 || ny >= n) {
+                if(nx<0 || nx >= n || ny <0 || ny >= m) {
                     continue;
                 }
 
