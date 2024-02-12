@@ -26,8 +26,8 @@ public class Main {
 
             for(int j=0; j<2; j++) {
 
-                int nx = moves[i][j][0];
-                int ny = moves[i][j][1];
+                int nx = cx + moves[i][j][0];
+                int ny = cy + moves[i][j][1];
 
                 if(nx<0 || nx >= n || ny <0 || ny >= n) {
                     continue;
