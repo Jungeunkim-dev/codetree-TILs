@@ -34,7 +34,7 @@ public class Main {
                 if(k-key == key) {
                     int c1 = map.get(key);
 
-                    resultCount += (c1+c1-1) / 2;
+                    resultCount += (c1 * (c1-1)) / 2;
                 } else {
 
                 int c1 = map.get(k-key);
