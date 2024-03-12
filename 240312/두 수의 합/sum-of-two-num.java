@@ -30,12 +30,20 @@ public class Main {
 
         for(Integer key : keys) {
             if(map.containsKey(k-key)) {
+
+                if(k-key == key) {
+                    int c1 = map.get(key);
+
+                    resultCount += (c1+c1-1) / 2;
+                } else {
+
                 int c1 = map.get(k-key);
                 int c2 = map.get(key);
 
                 resultCount += (c1 * c2);
 
                 map.remove(key);
+                }
             }
         }
 
