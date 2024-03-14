@@ -4,13 +4,13 @@ import java.util.stream.*;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        HashMap<Integer, Integer> map = new HashMap<>();
+        HashMap<Long, Long> map = new HashMap<>();
 
         int n = sc.nextInt();
 
         for(int i=0; i<n; i++) {
-            int x = sc.nextInt();
-            int y = sc.nextInt();
+            long x = sc.nextLong();
+            long y = sc.nextLong();
 
             if (map.containsKey(x)) {
                 if(map.get(x) > y) {
@@ -23,9 +23,9 @@ public class Main {
 
         int ans = 0;
 
-        List<Integer> values = map.values().stream().collect(Collectors.toList());
+        List<Long> values = map.values().stream().collect(Collectors.toList());
 
-        for(Integer i : values){
+        for(Long i : values){
             ans+= i;
         }
 
