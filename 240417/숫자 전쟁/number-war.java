@@ -34,12 +34,12 @@ public class Main {
                     continue;
                 }
 
-                if(one[i+1] < two[i+1]){
+                if(one[i+1] < two[j+1]){
                     // 남우의 카드가 더 큰 경우-> 상대가 이김
                     dp[i+1][j] = Math.max(dp[i+1][j], dp[i][j]);
                 }
 
-                if(one[i+1] > two[i+1]) {
+                if(one[i+1] > two[j+1]) {
                     dp[i][j+1] = Math.max(dp[i][j+1], dp[i][j] + two[j+1]);
                 }
 
