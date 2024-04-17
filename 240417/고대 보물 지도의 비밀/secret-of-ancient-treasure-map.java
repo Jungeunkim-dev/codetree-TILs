@@ -14,35 +14,27 @@ public class Main {
             num[i] = sc.nextInt();
         }
 
-        int[] dp = new int[n+1];
+        int[][] dp = new int[n+1][k+1];
 
-        for(int i=1; i<=n; i++) {
-            dp[i] = num[i];
-        }
-
-        int minusCount = 0;
+        int ans = Integer.MIN_VALUE;
 
         for(int i=1; i<=n; i++) {
 
-            if (minusCount>k && num[i] < 0) {
-                continue;
+            if (num[i] >= 0) {
+                
+                for(int j=0; j<=k; j++) {
+                    dp[i][j] = Math.max(dp[i-1][j] + num[i], dp[i][j]);
+                    ans = Math.max(ans, dp[i][j]);
+                }
+            } else {
+
+                for(int j=1; j <= k; j++) {
+                    dp[i][j] = Math.max(dp[i-1][j-1] + num[i], dp[i][j]);
+                    ans = Math.max(ans, dp[i][j]);
+                }
             }
-
-            dp[i] = Math.max(dp[i], dp[i-1]+num[i]);
-
-            if(num[i] < 0) {
-                minusCount++;
-            }
         }
-
-        int ans = 0;
-
-        for(int i=1; i<=n; i++) {
-            ans = Math.max(ans, dp[i]);
-        }
-
-        System.out.println(Arrays.toString(dp));
-
+        
         System.out.println(ans);
     }
 }
