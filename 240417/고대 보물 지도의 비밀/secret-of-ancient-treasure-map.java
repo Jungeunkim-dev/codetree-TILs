@@ -23,13 +23,13 @@ public class Main {
             if (num[i] >= 0) {
                 
                 for(int j=0; j<=k; j++) {
-                    dp[i][j] = Math.max(dp[i-1][j] + num[i], dp[i][j]);
+                    dp[i][j] = Math.max(dp[i-1][j] + num[i], num[i]);
                     ans = Math.max(ans, dp[i][j]);
                 }
             } else {
 
                 for(int j=1; j <= k; j++) {
-                    dp[i][j] = Math.max(dp[i-1][j-1] + num[i], dp[i][j]);
+                    dp[i][j] = Math.max(dp[i-1][j-1] + num[i], num[i]);
                     ans = Math.max(ans, dp[i][j]);
                 }
             }
