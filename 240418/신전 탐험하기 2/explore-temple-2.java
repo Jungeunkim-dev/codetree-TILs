@@ -38,6 +38,7 @@ public class Main {
 
 
             for(int i=0; i<3; i++) {
+                if (start == i) continue;
                 ans = Math.max(dp[n][i], ans);
             }
         }
