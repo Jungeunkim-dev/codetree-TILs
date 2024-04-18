@@ -45,7 +45,7 @@ public class Main {
                             count = 1;
                         }
 
-                        dp[i][j][k] = Math.max(dp[i-1][j][k], dp[i-1][ (j) % 2][k-1]) + count;
+                        dp[i][j][k] = Math.max(dp[i-1][j][k], dp[i-1][ (j+1) % 2][k-1]) + count;
                     }
                 }
 
