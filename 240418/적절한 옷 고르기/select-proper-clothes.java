@@ -19,7 +19,7 @@ public class Main {
 
         int[][] dp = new int[m+1][n+1];
 
-        for(int i=1; i<=m; i++) { // 일수
+        for(int i=2; i<=m; i++) { // 일수
             
             for(int j=1; j<=n; j++) {
 
