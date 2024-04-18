@@ -23,9 +23,12 @@ public class Main {
             
             for(int j=1; j<=n; j++) {
 
+                if (data[j][0] > i || data[j][1] < i)
+                    continue;
+
                 for(int k=1; k<=n; k++) {
 
-                    if (data[j][0] > i || data[j][1] < i || data[k][0] > i || data[k][1] < i) {
+                    if (data[k][0] > i-1 || data[k][1] < i-1) {
                         continue;
                     }
 
@@ -35,6 +38,7 @@ public class Main {
         }
 
         int ans = 0;
+
 
         for(int i=1; i<=n; i++) {
             ans = Math.max(dp[m][i], ans);
