@@ -7,33 +7,45 @@ public class Main {
 
         int n = sc.nextInt();
 
-        int[][] dp = new int[n+1][11];
-
-        dp[1][0] = 0;
+        long[][] dp = new long[n+1][11];
 
         for(int i=1; i<=9; i++) {
             dp[1][i] = 1;
         }
 
+        // 0으로 시작하는 
 
-        for(int i=2; i<=n; i++) {
+        // for(int i=2; i<=n; i++) {
 
-            for(int j=0; j<=9; j++) {
+        //     for(int j=0; j<=9; j++) {
                 
-                if (j==0) dp[i][j] = dp[i][1] + 1;
-                if (j==9) dp[i][j] = dp[i][8] + 1;
+        //         if (j==0) dp[i][j] = dp[i][1] + 1;
+        //         if (j==9) dp[i][j] = dp[i][8] + 1;
 
-                if (j>0 && j<9) {
+        //         if (j>0 && j<9) {
                     
-                    dp[i][j] = dp[i-1][j-1] + dp[i-1][j+1];
+        //             dp[i][j] = dp[i-1][j-1] + dp[i-1][j+1];
+        //         }
+        //     }
+        // }
+
+        for(int i=1; i<n; i++) {
+            for(int j=0; j<=9; j++) {
+
+                if (j > 0) {
+                    dp[i+1][j-1] = (dp[i+1][j-1] + dp[i][j]) % 1000000007;
+                }
+
+                if (j < 9) {
+                    dp[i+1][j+1] = (dp[i+1][j+1] + dp[i][j]) % 1000000007;
                 }
             }
         }
 
-        int ans = 0;
+        long ans = 0;
 
         for(int i=0; i<=9; i++) {
-            ans += (dp[n][i] % (Math.pow(10, 9)+7));
+            ans += (dp[n][i]);
         }
 
         System.out.println(ans);
